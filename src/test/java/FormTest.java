@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -34,14 +35,16 @@ public class FormTest extends TestBase {
         Select seleniumCommandsSelect = new Select(driver.findElement(By.id("selectSeleniumCommands")));
         seleniumCommandsSelect.selectByValue("browser-commands");
 
-
-
         File file = new File("src/main/resources/file.txt");
 
         WebElement fileInput = driver.findElement(By.id("chooseFile"));
         fileInput.sendKeys(file.getAbsolutePath());
 
 
+        driver.findElement(By.className("btn-primary")).click();
+
+        String validatorMsg = driver.findElement(By.id("validator-message")).getText();
+        Assert.assertEquals(validatorMsg, "Form send with success");
     }
 
     public WebElement getRandomElement(List<WebElement> elements) {
