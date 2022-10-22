@@ -3,6 +3,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import java.io.File;
 import java.util.List;
 import java.util.Random;
 
@@ -30,7 +31,16 @@ public class FormTest extends TestBase {
         Select continentsSelect = new Select(driver.findElement(By.id("selectContinents")));
         continentsSelect.selectByValue("europe");
 
-        // dodanie obsluji selecta: selenium commands na form
+        Select seleniumCommandsSelect = new Select(driver.findElement(By.id("selectSeleniumCommands")));
+        seleniumCommandsSelect.selectByValue("browser-commands");
+
+
+
+        File file = new File("src/main/resources/file.txt");
+
+        WebElement fileInput = driver.findElement(By.id("chooseFile"));
+        fileInput.sendKeys(file.getAbsolutePath());
+
 
     }
 
