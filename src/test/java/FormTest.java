@@ -1,5 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -25,6 +26,11 @@ public class FormTest extends TestBase {
         getRandomElement(driver.findElements(By.name("gridRadiosExperience"))).click();
 
         driver.findElement(By.id("gridCheckAutomationTester")).click();
+
+        Select continentsSelect = new Select(driver.findElement(By.id("selectContinents")));
+        continentsSelect.selectByValue("europe");
+
+        // dodanie obsluji selecta: selenium commands na form
 
     }
 
