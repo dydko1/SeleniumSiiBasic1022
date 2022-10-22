@@ -1,4 +1,6 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -14,7 +16,6 @@ public class TestBase {
 
         ChromeOptions option = new ChromeOptions();
         option.addArguments("start-maximized");
-
         driver = new ChromeDriver(option);
     }
 
