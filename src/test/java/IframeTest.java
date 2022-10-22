@@ -16,6 +16,5 @@ public class IframeTest extends TestBase{
 
         driver.switchTo().defaultContent();
         driver.findElement(By.className("dropdown")).getText();
-
     }
 }
