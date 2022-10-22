@@ -7,14 +7,37 @@ public class IframeTest extends TestBase{
     public void shouldFillFormInIframe(){
         driver.get("http://automation-practice.emilos.pl/iframes.php");
 
-
-        driver.findElement(By.className("dropdown")).getText();
-
         driver.switchTo().frame("iframe1");
 
         driver.findElement(By.id("inputFirstName3")).sendKeys("Jan");
+        driver.findElement(By.id("inputSurname3")).sendKeys("Kowalski");
 
         driver.switchTo().defaultContent();
-        driver.findElement(By.className("dropdown")).getText();
+
+        driver.switchTo().frame("iframe2");
+
+        driver.findElement(By.id("inputLogin")).sendKeys("Jan");
+        driver.findElement(By.id("gridRadios2")).click();
+    }
+
+    @Test
+    public void shouldFillFormInIframeWithFunctionalInterface(){
+        driver.get("http://automation-practice.emilos.pl/iframes.php");
+
+        executeInFrame("iframe1", () -> {
+            driver.findElement(By.id("inputFirstName3")).sendKeys("Jan");
+            driver.findElement(By.id("inputSurname3")).sendKeys("Kowalski");
+        });
+
+        executeInFrame("iframe2", () -> {
+            driver.findElement(By.id("inputLogin")).sendKeys("Jan");
+            driver.findElement(By.id("gridRadios2")).click();
+        });
+    }
+
+    public void executeInFrame(String frameName, Command command){
+        driver.switchTo().frame(frameName);
+        command.execute();
+        driver.switchTo().defaultContent();
     }
 }
