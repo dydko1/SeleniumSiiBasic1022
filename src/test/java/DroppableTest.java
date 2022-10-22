@@ -25,6 +25,6 @@ public class DroppableTest extends TestBase{
 //                .release(dropTo)
 //                .perform();
 
-        actions.dragAndDrop(toDrag, dropTo).perform();
+        actions.dragAndDrop(toDrag, dropTo).build();
     }
 }
