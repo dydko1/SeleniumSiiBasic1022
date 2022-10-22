@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -33,9 +34,20 @@ public class ProgressBarTests extends TestBase{
     }
 
     @Test
-    public void shouldWaitForProgressBarV4(){
+    public void shouldWaitForTextInProgressBarLabel(){
         driver.get("http://51.75.61.161:9102/progressbar.php");
 
+        WebElement progressBarLabel = driver.findElement(By.className("progress-label"));
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+    }
+
+    @Test
+    public void shouldWaitForAttributeInProgressBar(){
+        driver.get("http://51.75.61.161:9102/progressbar.php");
+
+        WebElement progressBar = driver.findElement(By.className("ui-progressbar-value"));
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
