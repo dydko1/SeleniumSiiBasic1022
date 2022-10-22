@@ -52,6 +52,6 @@ public class ProgressBarTests extends TestBase{
         WebElement progressBar = driver.findElement(By.className("ui-progressbar-value"));
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
+        wait.until(ExpectedConditions.attributeContains(progressBar, "class", "ui-progressbar-complete"));
     }
 }
