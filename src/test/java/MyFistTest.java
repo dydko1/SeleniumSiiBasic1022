@@ -1,26 +1,32 @@
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class MyFistTest {
-
-
     @BeforeMethod
     public void runBeforeEach(){
-        System.out.println("uruchomie sie zawsze");
+        System.out.println("run before each");
+    }
+
+    @AfterMethod
+    public void runAfterEach(){
+        System.out.println("run after each");
     }
 
     @Test
     public void test1(){
-        Assert.assertEquals(add(2,2), 4);
+        System.out.println("Im inside test1");
+        Assert.assertEquals(add(2,3),5);
+        System.out.println("Im at the end of test1");
     }
 
     @Test
     public void test2(){
-        System.out.println("xx");
-        int a = 10;
-        Assert.assertEquals(a,5);
-        System.out.println("yy");
+        System.out.println("Im inside test2");
+        Assert.assertEquals(multiply(2,3),6);
+        System.out.println("Im at the end of test2");
+
     }
 
     public int add(int a, int b){
