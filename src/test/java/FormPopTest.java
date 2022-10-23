@@ -1,16 +1,16 @@
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.FormPage;
 
+import java.io.File;
+
 public class FormPopTest extends TestBase {
-
-
     @Test
     public void shouldFillFormWithSuccess() {
         driver.get("http://51.75.61.161:9102/form.php");
 
         FormPage formPage = new FormPage(driver);
-
-
+        File file = new File("src/main/resources/file.txt");
 
         formPage.setName("Jan");
         formPage.setLastName("Kowalski");
@@ -19,9 +19,12 @@ public class FormPopTest extends TestBase {
         formPage.selectMale();
         formPage.selectRandomYearsOfExperience();
         formPage.selectAutomationTesterProfession();
-
         formPage.selectContinent("europe");
         formPage.selectSeleniumCommand("browser-commands");
+        formPage.uploadFile(file);
+        formPage.sendForm();
 
+        String validatorMsg = formPage.getValidationMsg();
+        Assert.assertEquals(validatorMsg, "Form send with success");
     }
 }
