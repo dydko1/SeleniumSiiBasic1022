@@ -35,9 +35,9 @@ public class IframeTest extends TestBase{
         });
     }
 
-    public void executeInFrame(String frameName, Command command){
+    public void executeInFrame(String frameName, Runnable command){
         driver.switchTo().frame(frameName);
-        command.execute();
+        command.run();
         driver.switchTo().defaultContent();
     }
 }
