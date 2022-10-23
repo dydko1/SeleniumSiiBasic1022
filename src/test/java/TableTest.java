@@ -1,6 +1,8 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
+import pages.MountainRowPage;
+import pages.MountainsTablePage;
 
 import java.util.List;
 
@@ -20,6 +22,17 @@ public class TableTest extends TestBase {
                 String state = row.findElement(By.cssSelector("td:nth-of-type(3)")).getText();
 
                 System.out.println(peak + " - in " + state + " - has height: " + height);
+            }
+        }
+    }
+
+    @Test
+    public void shouldPrintMountainsOver4000mV2() {
+        driver.get("http://51.75.61.161:9102/");
+
+        for (MountainRowPage mountain : new MountainsTablePage(driver).getAllMountains()) {
+            if (mountain.getHeight() > 4000) {
+                System.out.println(mountain);
             }
         }
     }

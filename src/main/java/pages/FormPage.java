@@ -49,62 +49,84 @@ public class FormPage {
     @FindBy(id = "validator-message")
     public WebElement validationMsgLbl;
 
-   @FindBy(css = ".btn-primary")
+    @FindBy(css = ".btn-primary")
     public WebElement sendFormBtn;
 
 
-    public void sendForm() {
+    public FormPage sendForm() {
         sendFormBtn.click();
+        return this;
     }
 
     public String getValidationMsg() {
         return validationMsgLbl.getText();
     }
-    public void uploadFile(File file) {
+
+    public FormPage uploadFile(File file) {
         fileUploadInput.sendKeys(file.getAbsolutePath());
+        return this;
+
     }
 
 
-    public void selectContinent(String continent) {
+    public FormPage selectContinent(String continent) {
         new Select(continentsSelect).selectByValue(continent);
+        return this;
+
     }
 
-    public void selectSeleniumCommand(String seleniumCommand) {
+    public FormPage selectSeleniumCommand(String seleniumCommand) {
         new Select(seleniumCommandsSelect).selectByValue(seleniumCommand);
+        return this;
+
     }
 
-    public void selectRandomGender() {
+    public FormPage selectRandomGender() {
         getRandomElement(genders).click();
+        return this;
+
     }
 
-    public void selectRandomYearsOfExperience() {
+    public FormPage selectRandomYearsOfExperience() {
         getRandomElement(yearsOfExperience).click();
+        return this;
+
     }
 
-    public void selectAutomationTesterProfession() {
+    public FormPage selectAutomationTesterProfession() {
         automationTesterChbx.click();
+        return this;
+
     }
 
-    public void selectMale() {
+    public FormPage selectMale() {
         genders.get(0).click();
+        return this;
     }
 
 
-    public void setName(String name) {
+    public FormPage setName(String name) {
         firstNameInput.sendKeys(name);
+        return this;
+
     }
 
-    public void setLastName(String lastName) {
+    public FormPage setLastName(String lastName) {
         lastNameInput.sendKeys(lastName);
+        return this;
+
     }
 
-    public void setEmail(String email) {
+    public FormPage setEmail(String email) {
         emailInput.sendKeys(email);
+        return this;
+
     }
 
     // String.valueOf(age) - zamienia 5 na "5"
-    public void setAge(int age) {
+    public FormPage setAge(int age) {
         this.age.sendKeys(String.valueOf(age));
+        return this;
     }
 
 
