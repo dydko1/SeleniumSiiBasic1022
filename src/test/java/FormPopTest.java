@@ -14,5 +14,6 @@ public class FormPopTest extends TestBase {
 
         formPage.setName("Jan");
         formPage.setAge(30);
+        formPage.selectContinent("europe");
     }
 }

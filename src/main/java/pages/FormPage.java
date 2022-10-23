@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 import java.util.Random;
@@ -22,12 +23,20 @@ public class FormPage {
     @FindBy(id = "inputEmail3")
     private WebElement emailInput;
 
+    @FindBy(id = "selectContinents")
+    private WebElement continentsSelect;
+
     @FindBy(id = "inputAge3")
     private WebElement age;  // tutaj powinno być ageInput, ale zostawiam age
                             // aby pokazać w metodzie działanie this.age
 
     @FindBy(name = "gridRadiosSex")
     private List<WebElement> genders;
+
+
+    public void selectContinent(String continent){
+        new Select(continentsSelect).selectByValue(continent);
+    }
 
     public void selectRandomGender(){
         getRandomElement(genders).click();
