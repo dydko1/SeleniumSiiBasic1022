@@ -1,10 +1,10 @@
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-public class IframeTest extends TestBase{
+public class IframeTest extends TestBase {
 
     @Test
-    public void shouldFillFormInIframe(){
+    public void shouldFillFormInIframe() {
         driver.get("http://automation-practice.emilos.pl/iframes.php");
 
         driver.switchTo().frame("iframe1");
@@ -21,7 +21,7 @@ public class IframeTest extends TestBase{
     }
 
     @Test
-    public void shouldFillFormInIframeWithFunctionalInterface(){
+    public void shouldFillFormInIframeWithFunctionalInterface() {
         driver.get("http://automation-practice.emilos.pl/iframes.php");
 
         executeInFrame("iframe1", () -> {
@@ -35,7 +35,7 @@ public class IframeTest extends TestBase{
         });
     }
 
-    public void executeInFrame(String frameName, Runnable command){
+    public void executeInFrame(String frameName, Runnable command) {
         driver.switchTo().frame(frameName);
         command.run();
         driver.switchTo().defaultContent();
