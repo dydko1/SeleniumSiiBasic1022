@@ -6,10 +6,10 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class AlertTests extends TestBase{
+public class AlertTests extends TestBase {
 
     @Test
-    public void shouldAcceptAlert(){
+    public void shouldAcceptAlert() {
         driver.get("http://51.75.61.161:9102/alerts.php");
         driver.findElement(By.id("simple-alert")).click();
 
@@ -20,7 +20,7 @@ public class AlertTests extends TestBase{
     }
 
     @Test
-    public void shouldAcceptPromptAlert(){
+    public void shouldAcceptPromptAlert() {
         driver.get("http://51.75.61.161:9102/alerts.php");
         driver.findElement(By.id("prompt-alert")).click();
 
@@ -32,7 +32,7 @@ public class AlertTests extends TestBase{
     }
 
     @Test
-    public void shouldAcceptDelayedAlert(){
+    public void shouldAcceptDelayedAlert() {
         driver.get("http://51.75.61.161:9102/alerts.php");
         driver.findElement(By.id("delayed-alert")).click();
 

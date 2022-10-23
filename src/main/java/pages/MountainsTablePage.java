@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,9 +17,9 @@ public class MountainsTablePage {
     private List<WebElement> allRows;
 
 
-    public List<MountainRowPage> getAllMountains(){
+    public List<MountainRowPage> getAllMountains() {
         List<MountainRowPage> allMountains = new ArrayList<>();
-        for (WebElement row : allRows){
+        for (WebElement row : allRows) {
             allMountains.add(new MountainRowPage(row));
         }
         return allMountains;

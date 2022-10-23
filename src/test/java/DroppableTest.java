@@ -3,10 +3,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class DroppableTest extends TestBase{
+public class DroppableTest extends TestBase {
 
     @Test
-    public void shouldDragAndDrop(){
+    public void shouldDragAndDrop() {
         driver.get("http://51.75.61.161:9102/droppable.php");
 
         WebElement toDrag = driver.findElement(By.id("draggable"));
