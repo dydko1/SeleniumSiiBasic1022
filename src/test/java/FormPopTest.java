@@ -13,7 +13,15 @@ public class FormPopTest extends TestBase {
 
 
         formPage.setName("Jan");
+        formPage.setLastName("Kowalski");
+        formPage.setEmail("Jan.k@wp.pl");
         formPage.setAge(30);
+        formPage.selectMale();
+        formPage.selectRandomYearsOfExperience();
+        formPage.selectAutomationTesterProfession();
+
         formPage.selectContinent("europe");
+        formPage.selectSeleniumCommand("browser-commands");
+
     }
 }

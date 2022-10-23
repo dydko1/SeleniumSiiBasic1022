@@ -26,6 +26,9 @@ public class FormPage {
     @FindBy(id = "selectContinents")
     private WebElement continentsSelect;
 
+    @FindBy(id = "selectSeleniumCommands")
+    private WebElement seleniumCommandsSelect;
+
     @FindBy(id = "inputAge3")
     private WebElement age;  // tutaj powinno być ageInput, ale zostawiam age
                             // aby pokazać w metodzie działanie this.age
@@ -33,13 +36,31 @@ public class FormPage {
     @FindBy(name = "gridRadiosSex")
     private List<WebElement> genders;
 
+    @FindBy(name = "gridRadiosExperience")
+    private List<WebElement> yearsOfExperience;
+
+    @FindBy(id = "gridCheckAutomationTester")
+    private WebElement automationTesterChbx;
+
 
     public void selectContinent(String continent){
         new Select(continentsSelect).selectByValue(continent);
     }
 
+    public void selectSeleniumCommand(String seleniumCommand){
+        new Select(seleniumCommandsSelect).selectByValue(seleniumCommand);
+    }
+
     public void selectRandomGender(){
         getRandomElement(genders).click();
+    }
+
+    public void selectRandomYearsOfExperience(){
+        getRandomElement(yearsOfExperience).click();
+    }
+
+    public void selectAutomationTesterProfession(){
+        automationTesterChbx.click();
     }
 
     public void selectMale(){
