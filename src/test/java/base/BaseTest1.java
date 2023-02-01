@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-public class TestBase1 {
+public class BaseTest1 {
 
     public WebDriver driver;
 
@@ -18,7 +18,7 @@ public class TestBase1 {
         ChromeOptions option = new ChromeOptions();
         option.addArguments("start-maximized");
         driver = new ChromeDriver(option);
-        driver.get(UrlProvider.app);
+        driver.get(UrlProvider.formUrl);
     }
 
     @AfterMethod

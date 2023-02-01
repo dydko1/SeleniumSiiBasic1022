@@ -3,7 +3,7 @@ package old;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.FormPage;
+import pagesOld.FormPage;
 
 import java.io.File;
 

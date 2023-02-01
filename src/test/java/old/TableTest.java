@@ -3,8 +3,8 @@ package old;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-import pages.MountainRowPage;
-import pages.MountainsTablePage;
+import pagesOld.MountainRowPage;
+import pagesOld.MountainsTablePage;
 
 import java.util.List;
 
