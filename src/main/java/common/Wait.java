@@ -15,7 +15,8 @@ public class Wait extends BasePage1 {
     }
 
     public void wait(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(500));
-        wait.until((ExpectedConditions.visibilityOf(element)));
+        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofMillis(500));
+        wait1.until((ExpectedConditions.visibilityOf(element)));
+        wait1.until((ExpectedConditions.textToBePresentInElement(element,"Age")));
     }
 }

@@ -12,7 +12,7 @@ public class FormPage1 extends BasePage1 {
     @FindBy(css = "#inputFirstName3")
     public WebElement fieldName;
 
-    @FindBy(css = "#inputAge3")
+    @FindBy(css = "label[for='inputAge3']")
     public WebElement fieldAge;
 
 
