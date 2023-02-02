@@ -14,3 +14,5 @@ mvn test -Dgroups=pass123
 Wazne z konsoli z gita uruchamiac
 "$ mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/test.xml,src/test/resources/test2.xml"
 mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/test.xml -Dbrowser="eeeeeeeeeeeeeeeeee"
+
+powershell to są ważne "" jak w przykładzie mvn clean test -D"surefire.suiteXmlFiles"="src/test/resources/test.xml"
