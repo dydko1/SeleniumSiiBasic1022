@@ -8,6 +8,7 @@ public class FormTest1 extends BaseTest1 {
     public void test() throws InterruptedException {
         FormPageActions formPageActions = new FormPageActions(driver);
         formPageActions.fillName();
+        formPageActions.getTitle();
         Thread.sleep(1500);
     }
 }

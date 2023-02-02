@@ -10,7 +10,7 @@ import java.time.Duration;
 public class BasePage1 {
     public WebDriver driver;
     public Actions actions;
-    public WebDriverWait wait;
+    public WebDriverWait wait1;
 
     public BasePage1(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -20,8 +20,10 @@ public class BasePage1 {
     private void initDriver(WebDriver driver) {
         this.driver = driver;
         actions = new Actions(driver);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait1 = new WebDriverWait(driver, Duration.ofSeconds(1));
     }
 
-
+    public WebDriver getDriver() {
+        return driver;
+    }
 }
