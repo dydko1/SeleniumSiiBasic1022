@@ -18,7 +18,7 @@ public class Wait1 extends BasePage1 {
             //wait1 = new WebDriverWait(driver, Duration.ofSeconds(30));
             wait1.until(ExpectedConditions.visibilityOf(element));
         } catch (Exception e) {
-            System.out.println("Element nie został odnalezniony!!");
+            System.out.println("Element nie został odnaleziony!!");
             return false;
         }
         return true;
