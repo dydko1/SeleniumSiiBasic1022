@@ -3,6 +3,7 @@
 <suite name="Miro testy">
 
     <test name="eeee">
+        <!-- parametr jest pobierany w XmlTest.java. Jak zly to przyjmuje @optionala"-->
         <parameter name="browser" value="FIREFOX"/>
 
         <classes>
