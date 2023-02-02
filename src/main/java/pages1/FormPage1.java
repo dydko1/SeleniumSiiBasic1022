@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class FormPage1 extends BasePage1 {
     public FormPage1(WebDriver driver) {
         super(driver);
@@ -17,9 +19,10 @@ public class FormPage1 extends BasePage1 {
     public WebElement fieldAge;
 
     private static final By SPINNEREK = By.className("overlay__spinner-text");
-    By header=By.xpath("//h1");
+    By header = By.xpath("//h1");
 
-
+    @FindBy(css = "div > input[name='gridRadiosSex']")
+    public List<WebElement> sex;
 
 
 }

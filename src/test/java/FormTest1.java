@@ -9,6 +9,7 @@ public class FormTest1 extends BaseTest1 {
         FormPageActions formPageActions = new FormPageActions(driver);
         formPageActions.fillName();
         formPageActions.getTitle();
-        Thread.sleep(1500);
+        formPageActions.getSex();
+        Thread.sleep(2500);
     }
 }

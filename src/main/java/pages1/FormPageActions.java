@@ -3,7 +3,6 @@ package pages1;
 import common.CommonAction;
 import common.Wait1;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Wait;
 
 public class FormPageActions {
     WebDriver driver;
@@ -21,9 +20,15 @@ public class FormPageActions {
     FormPage1 formPage1;
 
     public void fillName() {
-        wait1.wait(formPage1.fieldAge);
+        wait1.waitVisibilityOf(formPage1.fieldAge); // tylko do zabawy
+        //wait1.waitPresenceOfElementLocated(formPage1.header);
         commonAction.sendKeys(formPage1.fieldName, "Miroooooo2");
         System.out.println(formPage1.fieldName.getAttribute("value") + "ddddd");
+    }
+
+    public void getSex() {
+        System.out.println("Rozmiar: " + formPage1.sex.size());
+        formPage1.sex.get(0).click();
     }
 
     public void getTitle() {
