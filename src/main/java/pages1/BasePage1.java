@@ -20,7 +20,7 @@ public class BasePage1 {
     private void initDriver(WebDriver driver) {
         this.driver = driver;
         actions = new Actions(driver);
-        wait1 = new WebDriverWait(driver, Duration.ofSeconds(1));
+        wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     public WebDriver getDriver() {

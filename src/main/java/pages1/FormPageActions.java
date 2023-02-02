@@ -20,7 +20,8 @@ public class FormPageActions {
     FormPage1 formPage1;
 
     public void fillName() {
-        //waits1.waitVisibilityOf(formPage1.fieldAge); // tylko do zabawy
+        //waits1.waitPresenceOfElementLocated(formPage1.header);
+        // waits1.waitVisibilityOf(formPage1.fieldAge); // tylko do zabawy
         waits1.waitFluentVisibilityOf(formPage1.fieldAge);
         commonAction.sendKeys(formPage1.fieldName, "Miroooooo2");
         System.out.println(formPage1.fieldName.getAttribute("value") + "ddddd");
