@@ -1,0 +1,18 @@
+https://qavalidation.com/2015/07/testng-test-attributes-method-description-and-grouping.html/
+https://www.youtube.com/watch?v=lL_G2pMmbo0
+
+mvn test -Dgroups=miro1
+mvn test -Dgroups=miro1,func
+mvn test -Dgroups=miro1,func.* // wszystkie
+mvn test -DexcludedGroups=miro2,sanity2 //exclude
+
+// z cmd konsoli nie działa tylkokonsola z git-a
+mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/test2.xml //single xml run
+
+
+//
+mvn test -Dgroups=pass123
+
+Wazne z konsoli z gita uruchamiac
+"$ mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/test.xml,src/test/resources/test2.xml"
+mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/test.xml -Dbrowser="eeeeeeeeeeeeeeeeee"

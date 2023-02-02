@@ -6,6 +6,7 @@ import java.util.Properties;
 
 public class XmlTest {
 
+    // -ea  -Dbrowser="Miro19801111"
     @Test
     @Parameters({"browser"})
     public void test(@Optional("hello Mirkuuuuu") String browser) {
