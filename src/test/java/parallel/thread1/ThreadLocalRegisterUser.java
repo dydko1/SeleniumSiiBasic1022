@@ -35,7 +35,7 @@ public class ThreadLocalRegisterUser implements Runnable {
     }
 
     private void getUserWithDelay() throws InterruptedException {
-        Thread.sleep(5000);
+        //hread.sleep(5000);
         System.out.println(Thread.currentThread().getName() + " After some delay , value of registeredUserName :" + threadLocal.get());
 
     }

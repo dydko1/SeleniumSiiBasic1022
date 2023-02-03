@@ -22,7 +22,7 @@ public class TestOneWithNoStaticWebDriver {
     public void GoogleTest() throws InterruptedException {
         log.info("Hello World! 1234");
         webdriver.get().get("https://www.google.com/");
-        Thread.sleep(1500);
+        //Thread.sleep(1500);
         //System.out.println("Title printed by Thread " + Thread.currentThread().getId() + " - " + WebDriverFactoryStatic.driver.getTitle());
         log.info("Title printed by " + Thread.currentThread().getName() + webdriver.get().getTitle());
         webdriver.get().close();
@@ -32,7 +32,7 @@ public class TestOneWithNoStaticWebDriver {
     public void FacebookTest() throws InterruptedException {
         log.info("Hello World! 12345");
         webdriver.get().get("https://www.facebook.com/");
-        Thread.sleep(1500);
+        //Thread.sleep(1500);
         System.out.println("Title printed by " + Thread.currentThread().getName() + webdriver.get().getTitle());
         webdriver.get().manage().deleteAllCookies();
         webdriver.get().close();

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="2" name="Suite" parallel="methods">
-    <test thread-count="2" name="Test" parallel="methods">
+<suite thread-count="4" name="Suite" parallel="methods">
+    <test thread-count="4" name="Test" parallel="methods">
         <classes>
             <class name="parallel.thread1.WebDriverTest2"/>
             <class name="parallel.thread1.TestOneWithNoStaticWebDriver"/>
