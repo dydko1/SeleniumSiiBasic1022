@@ -25,7 +25,7 @@ public class TestTwoWithNoStaticWebDriver {
 
         webdriver.get().get("https://www.flipkart.com/");
         Thread.sleep(1500);
-        System.out.println("Title printed by " + Thread.currentThread().getName() + webdriver.get().getTitle());
+        log.info("Title printed by " + Thread.currentThread().getName() + webdriver.get().getTitle());
         webdriver.get().close();
 
     }
@@ -34,7 +34,7 @@ public class TestTwoWithNoStaticWebDriver {
     public void MyntraTest() throws InterruptedException {
         webdriver.get().get("https://onet.pl/");
         Thread.sleep(1500);
-        System.out.println("Title printed by " + Thread.currentThread().getName() + webdriver.get().getTitle());
+        log.info("Title printed by " + Thread.currentThread().getName() + webdriver.get().getTitle());
         webdriver.get().close();
 
     }
